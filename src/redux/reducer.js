@@ -1,4 +1,4 @@
-import { ADDMOVIE } from './actions/Add_Movie';
+import { ADDMOVIE, DELETEMOVIE } from './actions/Add_Movie';
 
 const initialState = {
     movies: []
@@ -8,9 +8,20 @@ function reducer(state = initialState, action) {
     switch (action.type) {
         case ADDMOVIE:
             return {
-                movies: state.movies + action.value
+                movies: [...state.movies, action.value]
             }
-             default:
+        case DELETEMOVIE:
+            const remainingMovies = state.movies.filter((action, index) => {
+                if (index !== action.index) {
+                    return true
+                }
+                return false;
+            })
+            return {
+                ...state,
+                movies: remainingMovies
+            }
+        default:
             return state;
     }
 }

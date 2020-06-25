@@ -1,17 +1,18 @@
-export const ADDMOVIE = 'ADDMOVIE'
+export const ADDMOVIE = 'ADD_MOVIE'
+export const DELETEMOVIE = 'DELETE_MOVIE'
 
 
 
 export function addMovie(value) {
     return {
-        type: 'ADD_MOVIE',
+        type: ADDMOVIE,
         value,
     }
 }
 
 export function deleteMovie(index) {
     return {
-        type: 'DELETE_MOVIE',
+        type: DELETEMOVIE,
         index,
     }
 }
