@@ -11,7 +11,7 @@ function reducer(state = initialState, action) {
                 movies: [...state.movies, action.value]
             }
         case DELETEMOVIE:
-            const remainingMovies = state.movies.filter((action, index) => {
+            const remainingMovies = state.movies.filter((movie, index) => {
                 if (index !== action.index) {
                     return true
                 }

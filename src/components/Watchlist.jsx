@@ -13,20 +13,6 @@ class Watchlist extends Component {
         }
     }
 
-// getMovies = (id) => {
-//     const movie = this.state;
-//     fetch(`https://www.omdbapi.com/?s=${id}&apikey=e83ecd95`, {
-//         method: 'POST'
-//     })
-//         .then(res => res.json())
-//         .then(data => {
-//             if (data.Search) {
-//                 movie(data.Search)
-//             }
-//         })
-// }
-
-
 render() {
     return (
         <div>
@@ -37,9 +23,13 @@ render() {
                     <MovieCard 
                     movie={movie} 
                     key={index} 
+                    deleteMovie={()=>{
+                        console.log('yoooo');
+                        this.props.deleteMovie(index);
+                    }}
+
                     />
                     )
-                    // <button onClick={() => { props.deleteMovie(props.index) }}>Delete From Watch list</button>
             })}
         </div>
     )
@@ -51,8 +41,11 @@ const mapStateToProps = (state) => {
         movies: state.movies
     }
 }
+const mapDispatchToProps = {
+    deleteMovie,
+}
 
 export default connect(
     mapStateToProps,
-    null,
+    mapDispatchToProps,
 )(Watchlist);

@@ -38,7 +38,6 @@ export default class MovieSearch extends Component {
     render() {
         return (
             <Container fluid>
-
                 <div className="movie-container">
                     <header>
                         <h1>Scene It?</h1>
@@ -53,7 +52,7 @@ export default class MovieSearch extends Component {
                     </div>
                     <div className="movie-card">
                         <>
-                            <Row>
+                            <Row className='d-flex flex-wrap'>
                                 {this.state.movies.map((movie, index) => {
                                     return <MovieCard movie={movie} key={index} />
                                 })}
