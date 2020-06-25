@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import MovieCard from './MovieCard';
-// import { connect } from 'react-redux';
-// import { render } from '@testing-library/react';
+import { Link } from 'react-router-dom';
+
 
 export default class MovieSearch extends Component {
     constructor(props) {
@@ -42,6 +42,7 @@ export default class MovieSearch extends Component {
                     <h1>Scene It?</h1>
                 </header>
                 <h2>Add Movies to your Watch List</h2>
+                <Link to='/watchlist'>Go to Watch List</Link>
                 <div className="movie-form">
                     <form onSubmit={this.handleFormSubmit}>
                         <input type="text" id="search" value={this.state.movieName} onChange={this.handleChange} />

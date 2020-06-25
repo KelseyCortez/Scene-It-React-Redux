@@ -1,11 +1,15 @@
-export const addMovie = (content) => {
+export const ADDMOVIE = 'ADDMOVIE'
+
+
+
+export function addMovie(value) {
     return {
         type: 'ADD_MOVIE',
-        content,
+        value,
     }
 }
 
-export const deleteMovie = (index) => {
+export function deleteMovie(index) {
     return {
         type: 'DELETE_MOVIE',
         index,
